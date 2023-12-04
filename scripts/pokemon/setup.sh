@@ -17,13 +17,13 @@ mv -f sketch2pokemon.zip "../../datasets/"
 cd "../../datasets/"
 unzip sketch2pokemon.zip
 rm -f sketch2pokemon.zip
-cp -f "$BASE_DIR/organize.sh" "$BASE_DIR/make_dirs.sh" "pokemon_pix2pix_dataset"
+mv -f pokemon_pix2pix_dataset "$BASE_DIR/../datasets/"
 
 # Change to the dataset directory
-cd "pokemon_pix2pix_dataset"
+cd "$BASE_DIR/../datasets/pokemon_pix2pix_dataset"
 ./make_dirs.sh
 ./organize.sh
 
 # Go back to the original directory and run the Python script
-cd "$BASE_DIR/../.."
-python "$BASE_DIR/datasets/combine_A_and_B.py" --fold_A "$BASE_DIR/datasets/pokemon_pix2pix_dataset/A" --fold_B "$BASE_DIR/datasets/pokemon_pix2pix_dataset/B" --fold_AB "$BASE_DIR/datasets/pokemon_pix2pix_dataset/AB"
+cd "$BASE_DIR/../datasets"
+python "combine_A_and_B.py" --fold_A "pokemon_pix2pix_dataset/A" --fold_B "pokemon_pix2pix_dataset/B" --fold_AB "pokemon_pix2pix_dataset/AB"
