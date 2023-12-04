@@ -19,8 +19,7 @@ class BaseOptions():
                             default='axel_hed_cyclegan_panoptic_both_v2_testttt',  #panoptic_split _detectron2_panoptic
                             help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--checkpoints_dir', type=str,
-                            default='/media/test/Samhi/GANILLA/image_colorization/checkpoints/Panoptic_truba',
-                            #default='./checkpoints/',
+                            default='./checkpoints/',
                             help='models are saved here')
         parser.add_argument('--batch_size', type=int, default=1, help='input batch size')
         parser.add_argument('--loadSize', type=int, default=286, help='scale images to this size')
