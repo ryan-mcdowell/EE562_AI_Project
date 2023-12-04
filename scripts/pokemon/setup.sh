@@ -28,6 +28,6 @@ cd "$BASE_DIR/../../datasets/pokemon_pix2pix_dataset"
 ./organize.sh
 
 # Go back to the original directory and run the Python script
-cd "../.."
-python "combine_A_and_B.py" --fold_A "pokemon_pix2pix_dataset/A" --fold_B "pokemon_pix2pix_dataset/B" --fold_AB "pokemon_pix2pix_dataset/AB"
 cd ".."
+python "combine_A_and_B.py" --fold_A "pokemon_pix2pix_dataset/A" --fold_B "pokemon_pix2pix_dataset/B" --fold_AB "pokemon_pix2pix_dataset/AB"
+cd "../.."
