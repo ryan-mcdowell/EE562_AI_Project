@@ -3,12 +3,15 @@
 # Set the base directory where the script is located
 BASE_DIR="/content/EE562_AI_Project/scripts/pokemon"
 
+# Change to the script's directory
+cd "$BASE_DIR"
+
 # Remove existing dataset
 rm -rf "$BASE_DIR/../../datasets/pokemon_pix2pix_dataset"
 
 # Download and move the dataset
 kaggle datasets download -d norod78/sketch2pokemon
-mv -f "$BASE_DIR/sketch2pokemon.zip" "$BASE_DIR/../../datasets/"
+mv -f sketch2pokemon.zip "$BASE_DIR/../../datasets/"
 
 # Unzip the dataset
 cd "$BASE_DIR/../../datasets/"
