@@ -1,25 +1,26 @@
 #!/bin/bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# Set the base directory where the script is located
+BASE_DIR="/content/EE562_AI_Project/scripts/pokemon"
 
 # Remove existing dataset
-rm -rf "$SCRIPT_DIR/../../datasets/pokemon_pix2pix_dataset"
+rm -rf "$BASE_DIR/../../datasets/pokemon_pix2pix_dataset"
 
 # Download and move the dataset
 kaggle datasets download -d norod78/sketch2pokemon
-mv -f "$SCRIPT_DIR/sketch2pokemon.zip" "$SCRIPT_DIR/../../datasets/"
+mv -f "$BASE_DIR/sketch2pokemon.zip" "$BASE_DIR/../../datasets/"
 
 # Unzip the dataset
-cd "$SCRIPT_DIR/../../datasets/"
+cd "$BASE_DIR/../../datasets/"
 unzip sketch2pokemon.zip
 rm -f sketch2pokemon.zip
-cp -f "$SCRIPT_DIR/organize.sh" "$SCRIPT_DIR/make_dirs.sh" pokemon_pix2pix_dataset
+cp -f "$BASE_DIR/organize.sh" "$BASE_DIR/make_dirs.sh" pokemon_pix2pix_dataset
 
 # Change to the dataset directory
-cd "$SCRIPT_DIR/pokemon_pix2pix_dataset"
+cd "$BASE_DIR/pokemon_pix2pix_dataset"
 ./make_dirs.sh
 ./organize.sh
 
 # Go back to the original directory and run the Python script
-cd "$SCRIPT_DIR/../.."
-python "$SCRIPT_DIR/datasets/combine_A_and_B.py" --fold_A "$SCRIPT_DIR/datasets/pokemon_pix2pix_dataset/A" --fold_B "$SCRIPT_DIR/datasets/pokemon_pix2pix_dataset/B" --fold_AB "$SCRIPT_DIR/datasets/pokemon_pix2pix_dataset/AB"
+cd "$BASE_DIR/../.."
+python "$BASE_DIR/datasets/combine_A_and_B.py" --fold_A "$BASE_DIR/datasets/pokemon_pix2pix_dataset/A" --fold_B "$BASE_DIR/datasets/pokemon_pix2pix_dataset/B" --fold_AB "$BASE_DIR/datasets/pokemon_pix2pix_dataset/AB"
