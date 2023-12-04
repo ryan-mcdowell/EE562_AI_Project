@@ -1,5 +1,5 @@
-torch==2.1.1
-torchvision==0.16.1
+torch==2.1.0
+torchvision==0.16.0
 dominate==2.6.0
 visdom==0.1.8.9
 scipy
