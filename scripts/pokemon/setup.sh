@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the base directory where the script is located
-BASE_DIR="/content/EE562_AI_Project/scripts/pokemon"
+BASE_DIR="~/content/EE562_AI_Project/scripts/pokemon"
 
 # Change to the script's directory
 cd "$BASE_DIR"
