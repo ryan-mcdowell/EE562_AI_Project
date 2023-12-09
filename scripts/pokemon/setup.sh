@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Set the base directory where the script is located
-BASE_DIR="~/content/EE562_AI_Project/scripts/pokemon"
+BASE_DIR="$HOME/content/EE562_AI_Project/scripts/pokemon"
 
 # Change to the script's directory
-cd "$BASE_DIR"
+cd $BASE_DIR
 
 # Remove existing dataset
 rm -rf "../../datasets/pokemon_pix2pix_dataset"
