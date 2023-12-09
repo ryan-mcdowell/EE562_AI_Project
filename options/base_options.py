@@ -45,8 +45,8 @@ class BaseOptions():
                             help='binary=foreground and background classes merged together,'
                                  'multi_class=all seg outputs used separately,'
                                  'both=use above 2')
-        parser.add_argument('--epoch', type=str, default='100', help='which epoch to load? set to latest to use latest cached model')
-        parser.add_argument('--num_threads', default=8, type=int, help='# threads for loading data')
+        parser.add_argument('--epoch', type=str, default='25', help='which epoch to load? set to latest to use latest cached model')
+        parser.add_argument('--num_threads', default=16, type=int, help='# threads for loading data')
         parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization')
         parser.add_argument('--serial_batches', action='store_true', help='if true, takes images in order to make batches, otherwise takes them randomly')
         parser.add_argument('--no_dropout',  default=False, help='no dropout for the generator')
